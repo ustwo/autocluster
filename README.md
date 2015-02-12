@@ -15,7 +15,7 @@ Also used is PaperJS http://paperjs.org/ for vector graphics scripting.
 Please feel free to comment on the prototypes and the codebase along with feeling free to riff and build on them if possible. Attribution to ustwo will be much appreciated.
 
 ## About ![ustwo](https://media.licdn.com/media/p/4/005/02e/351/2f4017d.png)
-ustwo is a global design consultancy working in the confluence of working with clients and building homegrown and forward thinking products. With ustwo auto and its thought-pieces we are looking to delve into asking the right questions with respect to incar interactions and the Human Machine Interface (HMI)
+ustwo is a global design consultancy working in the confluence of working with clients and building homegrown and forward thinking products. With ustwo auto and its thought-pieces we are looking to delve into asking the right questions with respect to in-car interactions and the Human Machine Interface (HMI)
 Follow our website www.ustwo.com and also www.ustwo.com/auto for our publications.
 
 ## License
