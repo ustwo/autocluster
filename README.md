@@ -1,6 +1,6 @@
 # Autocluster codebase
 This the the codebase for prototypes used in the thought-piece "Re-imagining the instrument cluster in cars" written by ustwo. 
-There are 3 prototypes in this repository representing:
+There are 3 web based prototypes in this repository representing:
 * An unbranded archetype of an instrument cluster
 * Reimagining the cluster of a Ferrari California
 * Reimagining the cluster of a Mercedes Benz S-class 
@@ -8,15 +8,15 @@ There are 3 prototypes in this repository representing:
 ![Image of cluster]
 (https://github.com/ustwo/autocluster/blob/master/Source%20images/01_Drive.jpg)
 
-
 ## Tools
-The primary tool used for building these has been FramerJS framework as found at http://framerjs.com/ and their realtime application Framer Studio.
+The primary tool used for building these prototypes has been the FramerJS framework built for rapid prototyping and experimentation. This can be found at http://framerjs.com/ and their realtime application Framer Studio.
+Also used is PaperJS http://paperjs.org/ for vector graphics scripting.
 
-##Play with it
-<iframe src="http://trials.wormholevision.org/" frameborder="0"></iframe>
+Please feel free to comment on the prototypes and the codebase along with feeling free to riff and build on them if possible. Attribution to ustwo will be much appreciated.
 
 ## About ![ustwo](https://media.licdn.com/media/p/4/005/02e/351/2f4017d.png)
-
+ustwo is a global design consultancy working in the confluence of working with clients and building homegrown and forward thinking products. With ustwo auto and its thought-pieces we are looking to delve into asking the right questions with respect to incar interactions and the Human Machine Interface (HMI)
+Follow our website www.ustwo.com and also www.ustwo.com/auto for our publications.
 
 ## License
 
