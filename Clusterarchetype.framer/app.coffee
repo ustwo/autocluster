@@ -1,8 +1,11 @@
-#change cursor
+#Code elements for the unbranded protottype cluster. As can be seen at www.ustwo.com/auto and www.ustwo.com/blog
+#Built using the amazing FramerJS platform and Framer Studio
+
+#change global cursor
 document.body.style.cursor = "auto"
 bkgnd = new BackgroundLayer({backgroundColor:"white"})
 
-#container for buttons etc
+#CONTAINER FOR BUTTONS 
 buttoncontainer = new Layer
  width: 900, height: 500, rotation:0, backgroundColor: "transparent",x:295,y:-295, scale :1, opacity : 0
 buttoncontainer.center()
@@ -12,7 +15,7 @@ container = new Layer
  width: 550, height: 1440, rotation:270, backgroundColor: "#333132",x:295,y:-295, scale :0.6
 container.center()
 
-#print bkgnd.width
+#SCALE for devices
 if bkgnd.width<1000
  container.scale = 0.6 * (bkgnd.width/864)
  buttoncontainer.scale = (bkgnd.width/864)
@@ -20,13 +23,15 @@ if bkgnd.width<1000
 else 
  container.scale = 0.6 
  buttoncontainer.scale = 1
-  
+ 
+#COLORS  
 blue= "#0e95e6"
 green= "#2ad880"
 red= "#fc5454"
 orange= "#ff8948"
 
-# The font file is at 'fonts/customFont.otf'
+#FONTS USED FOR THE APP
+#Medium
 style = document.createElement('style');
 style.type = 'text/css';
 style.appendChild(document.createTextNode("@font-face {\n" +
@@ -37,7 +42,7 @@ style.appendChild(document.createTextNode("@font-face {\n" +
 "}\n"));
 document.getElementsByTagName('head')[0].appendChild(style);
 
-#regular
+#Regular
 style = document.createElement('style');
 style.type = 'text/css';
 style.appendChild(document.createTextNode("@font-face {\n" +
@@ -48,6 +53,7 @@ style.appendChild(document.createTextNode("@font-face {\n" +
 "}\n"));
 document.getElementsByTagName('head')[0].appendChild(style);
 
+#Light
 style = document.createElement('style');
 style.type = 'text/css';
 style.appendChild(document.createTextNode("@font-face {\n" +
@@ -59,29 +65,29 @@ style.appendChild(document.createTextNode("@font-face {\n" +
 document.getElementsByTagName('head')[0].appendChild(style);
 
 
-#master layers
+#MASTER LAYERS
 fuel = new Layer
  width: 550, height: 1440, y: 80 ,x :0, backgroundColor: "#222222" , opacity : 0
 speed = new Layer
  width: 550, height: 1440, y: -1360 ,x :0, backgroundColor: "#333333"
  
+#Speed limits as grey background
 bkgnd = new Layer 
 	x:0, y:28, width:550, height:1440, image:"images/bkgnd1440.png", opacity: 0.9
 speed.addSubLayer(bkgnd)
 
-
+#Range partitions to show relative position
 fubkgnd = new Layer 
 	x:-445, y:445, width:1440, height:550, image:"images/bg_park.png",rotation:90
 fuel.addSubLayer(fubkgnd)
  
-#sublayers
+#RANGE elements
 fuelstatus = new Layer
  width: 10, height: 1440,backgroundColor: green, opacity: 0.8
 fuel.addSubLayer(fuelstatus) 
 
 fuelstatuswhite = new Layer x:140, width: 130, height: 1440, backgroundColor: 'white', opacity:0.1
 fuelstatus.addSubLayer(fuelstatuswhite) 
-
 
 locline1 = new Layer
    x:-370, y:713, width:1440, height:6, image:"images/dashedline.png", rotation:90, opacity:0
@@ -158,6 +164,7 @@ miles.style =
   padding:'0px'
 fuel.addSubLayer(miles) 
 
+#SPEED elements
 #speed and statuses
 speedstatus = new Layer
  width: 2, height: 1440, backgroundColor: blue
@@ -216,7 +223,7 @@ mph.style =
 speed.addSubLayer(mph) 
 
 
-#reverse
+#REVERSE
 reverserect= new Layer
  width:550, height: 1440, x : 0, y: 1443, opacity : 1,  backgroundColor: "#fff" 
 reverseimage = new Layer 
@@ -224,6 +231,7 @@ reverseimage = new Layer
 #reverseimage.center()
 reverserect.addSubLayer(reverseimage) 
 
+#PNDR - GEAR POSITIONING and elements
 #overlays
 PNDRbkgnd= new Layer 
 	x:0, y:0, width:750, height:80,opacity:0 ,backgroundColor: "#ffffff"
@@ -231,7 +239,7 @@ PNDRbkgnd= new Layer
 gearicon = new Layer 
 	x:40, y:15, width:12, height:48, image:"images/icon_gear.png", rotation: 90,opacity: 0
 	
-#PNDR actual
+
 P = new Layer x:420, y:-10, width:120, height:100, rotation:90,opacity: 0, backgroundColor:'transparent'
 P.html = 'P'
 P.style =
@@ -273,21 +281,15 @@ alertsms = new Layer
 	x:235, y:-200, width:96, height:102, image:"images/icon_message.png", rotation: 90,
 opacity:0
 
-
-
-
 #GLOBAL VARIABLES
-#speeds
+#Speeds of speed element's movement 
 fastsp = 0.001
 medsp = 0.005
 slowsp = 0.01
-#color value
-red = 20
-
 
 #buttons for acce and decce and reverse
 buttonA = new Layer
- width:360 , height:40,  x: 522, y:430, opacity : 1, backgroundColor:"#e3e3e3", borderRadius: 0
+ width:360 , height:40,  x: 522, y:430, opacity : 1, backgroundColor:"#e3e3e3", 
 buttonA.html = "Accelerate"
 buttonA.style =
   #textAlign:'center'
@@ -301,7 +303,7 @@ buttonA.shadowColor = "#b2b2b1"
 
 
 buttonB = new Layer
- width:320 , height:40,  x:185, y:430, opacity : 1, backgroundColor:"#e3e3e3", borderRadius: 0
+ width:320 , height:40,  x:185, y:430, opacity : 1, backgroundColor:"#e3e3e3", 
 buttonB.html = "Brake"
 buttonB.style =
   #textAlign:'center'
@@ -315,7 +317,7 @@ buttonB.shadowColor = "#b2b2b1"
 
  
 buttonR = new Layer
- width:150 , height:40,  x: 18, y:430, opacity : 1, backgroundColor:"#b2b2b1", borderRadius: 0
+ width:150 , height:40,  x: 18, y:430, opacity : 1, backgroundColor:"#b2b2b1", 
 buttonR.html = "Reverse"
 buttonR.style =
   #textAlign:'center'
@@ -329,7 +331,7 @@ buttonR.shadowColor = "#7c7c7c"
 
 buttonAlert = new Layer
  width:80 , height:40,  x: 18, y:0, opacity : 1, backgroundColor:"transparent", borderRadius: 0
-buttonAlert.html = "SMS alert"
+#buttonAlert.html = "SMS alert"
 buttonAlert.style =
   #textAlign:'center'
   fontFamily:'myfont'
@@ -391,7 +393,7 @@ container.addSubLayer(gearsoff)
 container.addSubLayer(PNDRun) 
 
 
-#resizing windows
+#RESIZE FUNCTION
 window.onresize = ->
 	#print window.Screen.width
 	container.center()
@@ -517,7 +519,7 @@ speedup = ->
       time: 0.18
       curve: "ease"
       
-#speedy function
+#SPEEDY function - appears in the acceleration and brake functions
 speedyfunc = ->
  if speedy < 36
    rainicon.animate
@@ -556,8 +558,7 @@ speedyfunc = ->
 
 
 #ACTION EVENTS
-
-#Initialize fuel
+#Initialize Range
 setint = null
 if speedy < 1
      fuel.y = 0
@@ -626,7 +627,7 @@ if speedy < 1
      P.style.color='#444444'
      
 
-#accelerate with sms alert
+#ACCELERATE with SMS alerts
 altrack = 0
 raintrack = 0 
 #Global null
@@ -696,7 +697,7 @@ buttonA.on Events.TouchStart,(e) ->
     if speedy > 0
      speedup()   
 
- #decelerate
+ #DECELERATE on TOUCH END
    buttonA.on Events.TouchEnd,(e) -> 
    	 e.stopPropagation()
    	 #print "N"
@@ -730,7 +731,7 @@ buttonA.on Events.TouchStart,(e) ->
           properties : {x :-445}
           time:0.3
        
- #brake    
+ #BRAKE on touch start
    buttonB.on Events.TouchStart, (e) ->
    	 e.stopPropagation() 
    	 #print "brake"
@@ -779,7 +780,8 @@ buttonA.on Events.TouchStart,(e) ->
          gearson.animate
           properties : {x :-445}
           time:0.3
- 
+   
+   #BRAKE touch end
      buttonB.on Events.TouchEnd,(e) ->
        e.stopPropagation() 
        #print "brake off"
@@ -814,7 +816,7 @@ buttonA.on Events.TouchStart,(e) ->
           time:0.3
 
 
-#REVERSE
+#REVERSE actions
 buttonR.on Events.TouchStart, ->
   buttonR.style =
       padding:'11px'
@@ -827,7 +829,7 @@ buttonR.on Events.TouchEnd, ->
   buttonR.shadowY = 5
   buttonR.shadowColor = "#7c7c7c"
 
-
+#Reverse button click actions
 r =0
 buttonR.on Events.Click, ->
   r = r+1
