@@ -1,12 +1,19 @@
 # Autocluster codebase
 This the the codebase for prototypes used in the thought-piece "Re-imagining the instrument cluster in cars" written by ustwo. 
 There are 3 prototypes in this repository representing:
-1. An unbranded archetype of an instrument cluster
-2. Reimagining the cluster of a Ferrari California
-3. Reimagining the cluster of a Mercedes Benz S-class 
+* An unbranded archetype of an instrument cluster
+* Reimagining the cluster of a Ferrari California
+* Reimagining the cluster of a Mercedes Benz S-class 
 
+![Image of cluster]
+(https://github.com/ustwo/autocluster/blob/master/Source%20images/01_Drive.jpg)
+
+
+## Tools
 The primary tool used for building these has been FramerJS framework as found at http://framerjs.com/ and their realtime application Framer Studio.
 
+##Play with it
+<iframe src="http://trials.wormholevision.org/" frameborder="0"></iframe>
 
 ## About ![ustwo](https://media.licdn.com/media/p/4/005/02e/351/2f4017d.png)
 
