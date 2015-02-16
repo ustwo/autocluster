@@ -2,8 +2,8 @@
 This the the codebase for prototypes used in the thought-piece "Re-imagining the instrument cluster in cars" written by ustwo. 
 There are 4 web based prototypes in this repository representing:
 * An unbranded archetype of an instrument cluster
-* Reimagining the cluster of a Ferrari California
-* Reimagining the cluster of a Mercedes Benz S-class 
+* Concept cluster UI of a Ferrari California
+* Concept cluster UI of a Mercedes Benz S-class 
 * Adaptive UI prototype - using headtracking as a basis for judging viewing angle.
 
 ![Image of cluster]
