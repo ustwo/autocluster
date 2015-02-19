@@ -36,9 +36,9 @@ function showAlert(html) {
 function showBrowserAlert() {
 	var html = ""
 	html += "<div class='framerAlert'>"
-	html += "<strong>Error: Not A WebKit Browser</strong>"
-	html += "Your browser is not supported. <br> Please use Safari or Chrome.<br>"
-	html += "<a class='btn' href='javascript:void(0)' onclick='dismissAlert();'>Try anyway</a>"
+	html += "<strong>Sorry to bother you</strong>"
+	html += "Please use Safari or Chrome to view the prototype."
+	//html += "<a class='btn' href='javascript:void(0)' onclick='dismissAlert();'>Try anyway</a>"
 	html += "</div>"
 
 	showAlert(html)

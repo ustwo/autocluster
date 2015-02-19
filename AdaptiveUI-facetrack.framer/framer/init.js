@@ -36,9 +36,9 @@ function showAlert(html) {
 function showBrowserAlert() {
 	var html = ""
 	html += "<div class='framerAlert'>"
-	html += "<strong>Error: Not A WebKit Browser</strong>"
-	html += "Your browser is not supported. <br> Please use Safari or Chrome.<br>"
-	html += "<a class='btn' href='javascript:void(0)' onclick='dismissAlert();'>Try anyway</a>"
+	html += "<strong>Sorry to bother you</strong>"
+	html += "Please use Safari or Chrome to view the prototype."
+	//html += "<a class='btn' href='javascript:void(0)' onclick='dismissAlert();'>Try anyway</a>"
 	html += "</div>"
 
 	showAlert(html)
@@ -79,13 +79,6 @@ function showHomeScreenAlert() {
 	showAlert(html)
 }
 
-function setViewPortScale() {
-    var scale = 1 / window.devicePixelRatio;
-    var viewport = document.createElement("meta");
-    viewport.name = "viewport";
-    viewport.content = "width=device-width, height=device-height, initial-scale=" + scale + ", maximum-scale=" + scale + ", user-scalable=no"
-    document.getElementsByTagName("head")[0].appendChild(viewport); 
-}
 
 
 function loadProject() {
@@ -106,11 +99,7 @@ function setDefaultPageTitle() {
 	// you get a nice name on iOS if you bookmark to desktop.
 	document.addEventListener("DOMContentLoaded", function() {
 		if (document.title == "") {
-			if (window.FramerStudioInfo && window.FramerStudioInfo.documentTitle) {
-				document.title = window.FramerStudioInfo.documentTitle
-			} else {
-				document.title = window.location.pathname.replace(/\//g, "")
-			}
+			document.title = window.location.pathname.replace(/\//g, "")
 		}
 	})
 }
@@ -121,7 +110,6 @@ function init() {
 		return
 	}
 
-	setViewPortScale()
 	setDefaultPageTitle()
 
 	if (!isCompatibleBrowser()) {
