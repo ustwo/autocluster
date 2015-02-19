@@ -1307,7 +1307,7 @@ EventKeys = {
 
 window.document.onkeyup = function(event) {
   if (event.keyCode === EventKeys.Escape) {
-    return toggleDebug()();
+    //return toggleDebug()();
   }
 };
 
@@ -2893,6 +2893,9 @@ exports.Layer = (function(_super) {
       }
     } else {
       this.superLayer = options.superLayer;
+    }
+    if (options.hasOwnProperty("index")) {
+      this.index = options.index;
     }
     this._subLayers = [];
     this._context.emit("layer:create", this);

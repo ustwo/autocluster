@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 1424103130.042931
+# 1424351544.645631
 CACHE:
 /_server/server.js
 ../.temp.html
@@ -31,6 +31,8 @@ CACHE:
 ../framer/style.css
 ../framer/version
 ../images/Cluster 13.png
+../images/Cluster13text markers.png
+../images/Cluster13text markers2.png
 ../images/Cluster13text.png
 ../images/framer-icon.png
 ../index.html

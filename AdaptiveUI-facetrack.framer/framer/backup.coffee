@@ -1,11 +1,37 @@
 #change cursor
 document.body.style.cursor = "auto"
-bkgnd = new BackgroundLayer({backgroundColor:"white"})
+bkgnd = new BackgroundLayer({backgroundColor:"transparent"})
 
 #CONTAINER FOR A WEB VIEW CLUSTER
+supercontainer = new Layer
+ width: 1600, height: 500, rotation:0, backgroundColor: "#333132", scale :0.6
+supercontainer.center()
+
+videocontainer = new Layer
+ width: 360, height: 440, rotation:0, backgroundColor: "white",x:28,y:30, scale :1
+supercontainer.addSubLayer(videocontainer)
+
+
+# VIDEO INPUT
+# html avoided and element created in here
+videoInput = document.createElement('video')
+canvasInput = document.createElement('canvas')
+
+videoInput.style.position = 'absolute'
+canvasInput.style.position = 'absolute'
+videoInput.style.top = '0px'
+videoInput.style.left = '-150px'
+videoInput.style.zIndex = '10000'
+videoInput.style.display = 'block'
+videoInput.style.height = '440px'
+
+#DOM element and child!!!!
+videocontainer._element.appendChild(videoInput)
+
+
 container = new Layer
- width: 1440, height: 550, rotation:0, backgroundColor: "#333132",x:295,y:-295, scale :0.6
-container.center()
+ width: 1440, height: 550, rotation:0, backgroundColor: "#333132",x:280,y:-25, scale :0.8
+supercontainer.addSubLayer(container)
 
 clusterimage = new Layer 
 	x:0, y:0, width:1440, height:550, image:"images/Cluster 13.png"
@@ -16,11 +42,12 @@ clustertext = new Layer
 	x:0, y:0, width:1440, height:550, image:"images/Cluster13text.png"
 container.addSubLayer(clustertext)
 
-#HEADTRACKER JS used here - follow index.html text
-videoInput = document.getElementById('inputVideo')
-canvasInput = document.getElementById('inputCanvas')
+crosshair = new Layer 
+	x:0, y:0, width:1440, height:550, image:"images/Cluster13text markers.png", opacity :0.3	
+container.addSubLayer(crosshair)
 
-# requires headPosition : true in Tracker constructor
+# HEADTRACKER JS used for events tracking
+# Requires headPosition : true in Tracker constructor
 facez = 0
 facey = 0
 scaleZ = 0
@@ -39,6 +66,7 @@ handleHeadTrackingEvent = (e) ->
    moveY = 50
   movemoment = Utils.round(moveY,-1)
   clustertext.y = movemoment
+  #crosshair.y = movemoment
   
   #Scale on approach and retract based on event Z movement
   facez = Utils.round(e.z, 0)
@@ -48,7 +76,6 @@ handleHeadTrackingEvent = (e) ->
    scalemoment = 1.4
   clustertext.scale = scalemoment
   return
-
 
 #Tracker constructor
 htracker = new (headtrackr.Tracker)
@@ -63,3 +90,4 @@ htracker.start(
 document.addEventListener 'headtrackingEvent', handleHeadTrackingEvent
 
   
+

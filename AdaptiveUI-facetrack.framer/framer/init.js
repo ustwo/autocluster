@@ -79,6 +79,13 @@ function showHomeScreenAlert() {
 	showAlert(html)
 }
 
+function setViewPortScale() {
+    var scale = 1 / window.devicePixelRatio;
+    var viewport = document.createElement("meta");
+    viewport.name = "viewport";
+    viewport.content = "width=device-width, height=device-height, initial-scale=" + scale + ", maximum-scale=" + scale + ", user-scalable=no"
+    document.getElementsByTagName("head")[0].appendChild(viewport); 
+}
 
 
 function loadProject() {
@@ -114,6 +121,7 @@ function init() {
 		return
 	}
 
+	setViewPortScale()
 	setDefaultPageTitle()
 
 	if (!isCompatibleBrowser()) {
