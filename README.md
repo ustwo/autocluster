@@ -1,10 +1,12 @@
 # Autocluster codebase
-This the the codebase for prototypes used in the thought-piece "Re-imagining the instrument cluster in cars" written by ustwo. 
+These are the codebases and design assets for prototypes used in the thought-piece "Re-imagining the instrument cluster in cars" written by ustwo. 
 There are 4 web based prototypes in this repository representing:
 * An unbranded archetype of an instrument cluster
 * Concept cluster UI of a Ferrari California
 * Concept cluster UI of a Mercedes Benz S-class 
 * Adaptive UI prototype - using headtracking as a basis for judging viewing angle.
+
+Also included in the design assets folder is a PSD file for you to play with too.
 
 ![Image of cluster]
 (https://github.com/ustwo/autocluster/blob/master/Source%20images/01_Drive.jpg)
