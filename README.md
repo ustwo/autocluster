@@ -9,7 +9,7 @@ There are 4 web based prototypes in this repository representing:
 Also included in the design assets folder is a PSD file for you to play with too.
 
 ![Image of cluster]
-(https://github.com/ustwo/autocluster/blob/master/Source%20images/01_Drive.jpg)
+(https://github.com/ustwo/autocluster/blob/master/Source%20images/01_Drive.png)
 
 ## Tools
 * The primary tool used for building these prototypes has been the FramerJS framework built for rapid prototyping and experimentation. This can be found at http://framerjs.com/ and their realtime application Framer Studio.
