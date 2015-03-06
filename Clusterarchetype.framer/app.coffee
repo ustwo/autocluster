@@ -248,8 +248,17 @@ P.style =
   fontSize:'50px'
   color:'#ffffff'
   padding:'37px'
+  
+R = new Layer x:340, y:-10, width:120, height:100, rotation:90,opacity: 0, backgroundColor:'transparent'
+R.html = 'R'
+R.style =
+  fontFamily:'myfont2'
+  textAlign: 'center'
+  fontSize:'50px'
+  color:'#ffffff'
+  padding:'37px'
 
-N = new Layer x:340, y:-10, width:120, height:100, rotation:90,opacity: 0, backgroundColor:'transparent'
+N = new Layer x:260, y:-10, width:120, height:100, rotation:90,opacity: 0, backgroundColor:'transparent'
 N.html = 'N'
 N.style =
   fontFamily:'myfont2'
@@ -258,7 +267,7 @@ N.style =
   color:'#ffffff'
   padding:'37px'
   
-D = new Layer x:260, y:-10, width:120, height:100, rotation:90,opacity: 0, backgroundColor:'transparent'
+D = new Layer x:180, y:-10, width:120, height:100, rotation:90,opacity: 0, backgroundColor:'transparent'
 D.html = 'D'
 D.style =
   fontFamily:'myfont2'
@@ -267,14 +276,7 @@ D.style =
   color:'#ffffff'
   padding:'37px'
   
-R = new Layer x:180, y:-10, width:120, height:100, rotation:90,opacity: 0, backgroundColor:'transparent'
-R.html = 'R'
-R.style =
-  fontFamily:'myfont2'
-  textAlign: 'center'
-  fontSize:'50px'
-  color:'#ffffff'
-  padding:'37px'
+
 
 #Alerts
 alertsms = new Layer 
@@ -496,12 +498,12 @@ speedup = ->
      P.style.color='#ffffff'
      #D.backgroundColor ='rgba(256,256,256,0.8)'
      PNDRun.animate
-      properties : {x :285}
+      properties : {x :205}
       time:0.3
       Utils.delay 0.6, ->
        D.style.color='#444444'
      gearson.animate
-      properties : {x :-285}
+      properties : {x :-205}
       time:0.3
  
      speed.animate
@@ -847,12 +849,12 @@ buttonR.on Events.Click, ->
    D.backgroundColor ='transparent'
    D.style.color='#ffffff'
    PNDRun.animate
-    properties : {x :205}
+    properties : {x :367}
     time:0.3
     Utils.delay 0.6, ->
      R.style.color='#444444'
    gearson.animate
-     properties : {x :-205}
+     properties : {x :-367}
      time:0.3
    buttonR.html = "Reverse off"
      
