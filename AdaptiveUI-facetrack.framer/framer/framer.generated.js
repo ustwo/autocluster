@@ -8,9 +8,16 @@ window.Framer.Defaults.DeviceView = {
   "deviceType" : "fullscreen"
 };
 
+window.Framer.Defaults.DeviceComponent = {
+  "deviceScale" : -1,
+  "orientation" : 0,
+  "contentScale" : 1,
+  "deviceType" : "fullscreen"
+};
+
 window.FramerStudioInfo = {
   "deviceImagesUrl" : "file:\/\/\/Applications\/Framer%20Studio.app\/Contents\/Resources\/DeviceImages\/",
-  "documentTitle" : "Face tracking font5.framer"
+  "documentTitle" : "AdaptiveUI-facetrack.framer"
 };
 
 Framer.Device = new Framer.DeviceView();
@@ -248,17 +255,17 @@ module.exports = EventEmitter;
 
 },{}],2:[function(require,module,exports){
 var Bridge, EventEmitter,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-  __hasProp = {}.hasOwnProperty;
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
 EventEmitter = require("eventemitter3");
 
-Bridge = (function(_super) {
-  __extends(Bridge, _super);
+Bridge = (function(superClass) {
+  extend(Bridge, superClass);
 
   function Bridge() {
-    this.receive = __bind(this.receive, this);
+    this.receive = bind(this.receive, this);
     if (typeof window !== "undefined" && window !== null) {
       window._receive = this.receive;
     }
@@ -297,8 +304,8 @@ exports.bridge = new Bridge();
 
 },{"eventemitter3":1}],3:[function(require,module,exports){
 var ContextListener, ContextListenerPropertyUpdateKeys, bridge, getLayerProperties, traverseUp,
-  __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
 bridge = require("./Bridge").bridge;
 
@@ -324,7 +331,7 @@ getLayerProperties = function(layer) {
   if (properties.visible === false) {
     properties.visibleResult = false;
   } else {
-    properties.visibleResult = __indexOf.call(_.pluck(traverseUp(layer), "visible"), false) < 0;
+    properties.visibleResult = indexOf.call(_.pluck(traverseUp(layer), "visible"), false) < 0;
   }
   if (layer.superLayer != null) {
     properties.superLayer = layer.superLayer.id;
@@ -336,10 +343,10 @@ ContextListenerPropertyUpdateKeys = ["name", "superLayer", "index", "visible"];
 
 ContextListener = (function() {
   function ContextListener(context) {
-    this.onLayerDestroy = __bind(this.onLayerDestroy, this);
-    this.onLayerCreate = __bind(this.onLayerCreate, this);
-    this.onContextReset = __bind(this.onContextReset, this);
-    this._update = __bind(this._update, this);
+    this.onLayerDestroy = bind(this.onLayerDestroy, this);
+    this.onLayerCreate = bind(this.onLayerCreate, this);
+    this.onContextReset = bind(this.onContextReset, this);
+    this._update = bind(this._update, this);
     this._context = context;
     this.update = _.debounce(this._update, 10);
     this._context.on("reset", this.onContextReset);
@@ -360,25 +367,25 @@ ContextListener = (function() {
   };
 
   ContextListener.prototype.onLayerCreate = function(layer) {
-    var key, _i, _len, _results;
+    var i, key, len, results;
     this.update();
-    _results = [];
-    for (_i = 0, _len = ContextListenerPropertyUpdateKeys.length; _i < _len; _i++) {
-      key = ContextListenerPropertyUpdateKeys[_i];
-      _results.push(layer.on("change:" + key, this.update));
+    results = [];
+    for (i = 0, len = ContextListenerPropertyUpdateKeys.length; i < len; i++) {
+      key = ContextListenerPropertyUpdateKeys[i];
+      results.push(layer.on("change:" + key, this.update));
     }
-    return _results;
+    return results;
   };
 
   ContextListener.prototype.onLayerDestroy = function(layer) {
-    var key, _i, _len, _results;
+    var i, key, len, results;
     this.update();
-    _results = [];
-    for (_i = 0, _len = ContextListenerPropertyUpdateKeys.length; _i < _len; _i++) {
-      key = ContextListenerPropertyUpdateKeys[_i];
-      _results.push(layer.on("change:" + key, this.update));
+    results = [];
+    for (i = 0, len = ContextListenerPropertyUpdateKeys.length; i < len; i++) {
+      key = ContextListenerPropertyUpdateKeys[i];
+      results.push(layer.on("change:" + key, this.update));
     }
-    return _results;
+    return results;
   };
 
   return ContextListener;
@@ -391,7 +398,7 @@ exports.ContextListener = ContextListener;
 
 },{"./Bridge":2}],4:[function(require,module,exports){
 var ANIMATING_KEYS, highlightColor,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
 highlightColor = "#00A4FF";
 
@@ -399,8 +406,8 @@ ANIMATING_KEYS = ["x", "y", "width", "height", "scaleX", "scaleY", "scaleZ", "sc
 
 exports.HighlightComponent = (function() {
   function HighlightComponent() {
-    this.update = __bind(this.update, this);
-    this.highlight = __bind(this.highlight, this);
+    this.update = bind(this.update, this);
+    this.highlight = bind(this.highlight, this);
     var ctx;
     ctx = new Framer.Context({
       name: "Highlight"
@@ -440,27 +447,27 @@ exports.HighlightComponent = (function() {
   }
 
   HighlightComponent.prototype.highlight = function(layer) {
-    var p, _i, _len, _results;
+    var i, len, p, results;
     if (this.current === layer) {
       return;
     }
     this.current = layer;
     this.update();
-    _results = [];
-    for (_i = 0, _len = ANIMATING_KEYS.length; _i < _len; _i++) {
-      p = ANIMATING_KEYS[_i];
-      _results.push(this.current.on("change:" + p, this.update));
+    results = [];
+    for (i = 0, len = ANIMATING_KEYS.length; i < len; i++) {
+      p = ANIMATING_KEYS[i];
+      results.push(this.current.on("change:" + p, this.update));
     }
-    return _results;
+    return results;
   };
 
   HighlightComponent.prototype.unhighlight = function() {
-    var p, _i, _len;
+    var i, len, p;
     if (!this.current) {
       return;
     }
-    for (_i = 0, _len = ANIMATING_KEYS.length; _i < _len; _i++) {
-      p = ANIMATING_KEYS[_i];
+    for (i = 0, len = ANIMATING_KEYS.length; i < len; i++) {
+      p = ANIMATING_KEYS[i];
       this.current.off("change:" + p, this.update);
     }
     this.current = null;
@@ -496,9 +503,9 @@ exports.HighlightComponent = (function() {
 
 },{}],5:[function(require,module,exports){
 var BUILDS, EventEmitter, Runtime, TRANSFORM_REGEX, bridge,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-  __hasProp = {}.hasOwnProperty;
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
 EventEmitter = require("eventemitter3");
 
@@ -508,12 +515,12 @@ TRANSFORM_REGEX = /(([\w.]+) += +new [\w]*Layer[^;]*;)/g;
 
 BUILDS = 0;
 
-Runtime = (function(_super) {
-  __extends(Runtime, _super);
+Runtime = (function(superClass) {
+  extend(Runtime, superClass);
 
   function Runtime() {
-    this._windowErrorHandler = __bind(this._windowErrorHandler, this);
-    this._errorHandler = __bind(this._errorHandler, this);
+    this._windowErrorHandler = bind(this._windowErrorHandler, this);
+    this._errorHandler = bind(this._errorHandler, this);
     this.init();
   }
 
@@ -535,13 +542,12 @@ Runtime = (function(_super) {
     if (this.coffeescript === coffeescript) {
       return;
     }
-    console.clear();
     console.log("» Framer build " + (BUILDS++));
     this._errorHandlerRemove();
     this.coffeescript = coffeescript;
     result = this.uncoffee(this.coffeescript);
     this.sourceMap = result.sourceMap;
-    this.javascript = this.transform(result.js);
+    this.javascript = result.js;
     this._errorHandlerSetup();
     return this.javascript;
   };
@@ -556,7 +562,7 @@ Runtime = (function(_super) {
     try {
       result = CoffeeScript.compile(code, {
         sourceMap: true,
-        filename: "generated.js"
+        filename: "app.coffee"
       });
     } catch (_error) {
       e = _error;
@@ -573,7 +579,7 @@ Runtime = (function(_super) {
   };
 
   Runtime.prototype.transform = function(code) {
-    return code.replace(TRANSFORM_REGEX, "$1 $2._variableName = \"$2\";");
+    return code;
   };
 
   Runtime.prototype._errorHandler = function(error) {
@@ -600,7 +606,7 @@ Runtime = (function(_super) {
   };
 
   Runtime.prototype._lookupLine = function(lineNumber) {
-    var char, charIndex, errorColNumber, errorLine, errorLineIndex, errorLineNumber, loc, sourceLines, _i, _len;
+    var char, charIndex, errorColNumber, errorLine, errorLineIndex, errorLineNumber, i, len, loc, sourceLines;
     sourceLines = this.javascript.split("\n");
     errorLineIndex = lineNumber - 1;
     errorLine = sourceLines[errorLineIndex];
@@ -609,7 +615,7 @@ Runtime = (function(_super) {
     }
     errorLineNumber = 1;
     errorColNumber = 0;
-    for (charIndex = _i = 0, _len = errorLine.length; _i < _len; charIndex = ++_i) {
+    for (charIndex = i = 0, len = errorLine.length; i < len; charIndex = ++i) {
       char = errorLine[charIndex];
       loc = this.sourceMap.sourceLocation([errorLineIndex, charIndex]);
       if (loc && loc[0] > errorLineNumber) {
@@ -639,6 +645,12 @@ exports.context = require("./Context.coffee");
 
 HighlightComponent = require("./HighlightComponent.coffee").HighlightComponent;
 
+if (window.require == null) {
+  window.require = function(module) {
+    throw Error("Module " + module + " can't be found");
+  };
+}
+
 setupContext = function() {
   var context, getLayerById, highlighter;
   context = new exports.context.ContextListener(Framer.CurrentContext);
@@ -650,10 +662,10 @@ setupContext = function() {
     return highlighter.unhighlight();
   });
   return getLayerById = function(id) {
-    var layer, _i, _len, _ref;
-    _ref = Framer.CurrentContext._layerList;
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      layer = _ref[_i];
+    var i, layer, len, ref;
+    ref = Framer.CurrentContext._layerList;
+    for (i = 0, len = ref.length; i < len; i++) {
+      layer = ref[i];
       if (layer.id === id) {
         return layer;
       }
