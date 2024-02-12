@@ -1,48 +1,46 @@
-# Autocluster codebase
-These are the codebases and design assets for prototypes used in the thought-piece "Re-imagining the instrument cluster in cars" written by ustwo. 
-There are 4 web based prototypes in this repository representing:
-* An unbranded archetype of an instrument cluster
-* Concept cluster UI of a Ferrari California
-* Concept cluster UI of a Mercedes Benz S-class 
-* Adaptive UI prototype - using headtracking as a basis for judging viewing angle.
+# Autocluster Codebase
 
-Also included in the design assets folder is a PSD file for you to play with too.
+## Overview
 
-![Image of cluster]
-(https://github.com/ustwo/autocluster/blob/master/Source%20images/01_Drive.png)
+The Autocluster project is an innovative exploration into the future of automotive instrument clusters. Inspired by ustwo's thought-piece "Re-imagining the instrument cluster in cars," this repository hosts web-based prototypes that envision the future of driver information systems. The prototypes include:
 
-## Tools
-* The primary tool used for building these prototypes has been the FramerJS framework built for rapid prototyping and experimentation. This can be found at http://framerjs.com/ and their realtime application Framer Studio.
+- An unbranded archetype of an instrument cluster.
+- A concept cluster UI inspired by Ferrari California.
+- A concept cluster UI inspired by Mercedes Benz S-class.
+- An adaptive UI prototype utilizing headtracking to adjust viewing angles.
 
-* Also used is PaperJS http://paperjs.org/ for vector graphics scripting.
+These prototypes serve as a sandbox for ideas and experimentation, pushing the boundaries of design and functionality in automotive UI.
 
-* Headtrackr JS - which is a javascript library for real-time face tracking and head tracking, tracking the position of a users head in relation to the computer screen, via a web camera and the webRTC/getUserMedia standard. https://github.com/auduno/headtrackr/
+## Getting Started
 
-Please feel free to comment on the prototypes and the codebase along with feeling free to riff and build on them if possible. Attribution to ustwo will be much appreciated.
+### Prerequisites
 
-## About ![ustwo](https://media.licdn.com/media/p/4/005/02e/351/2f4017d.png)
-ustwo is a global product studio working with leading brands and building homegrown and forward-thinking products. With ustwo auto and its thought-pieces, we aim to ask the right questions about in-car interactions and the Human Machine Interface (HMI). Follow our website www.ustwo.com and also www.ustwo.com/auto for our publications.
+Before you begin, ensure you have the following tools installed:
+- Node.js (Version X.X or above)
+- Git
+
+### Installation
+
+1. Clone the repository:
+   git clone https://github.com/yourusername/autocluster.git
+2. Navigate to the project directory:
+   cd autocluster
+3. Install dependencies:
+   npm install
+4. Run the prototype of your choice (instructions specific to each prototype can be found in their respective folders).
+
+## Tools and Technologies
+
+- FramerJS: Utilized for rapid prototyping and experimentation. Learn more at http://framerjs.com/.
+- PaperJS: Employed for sophisticated vector graphics scripting. Learn more at http://paperjs.org/.
+- Headtrackr JS: A library for real-time face and head tracking, crucial for the adaptive UI prototype. Learn more at https://github.com/auduno/headtrackr/.
+
+We welcome contributions from the community! If you're interested in enhancing the Autocluster prototypes or have ideas for new features, please feel free to comment, contribute to the codebase, and build on them. Attribution to ustwo is much appreciated.
+
+## About ustwo
+
+ustwo is a global product studio working with leading brands and building homegrown, forward-thinking products. With ustwo auto and its thought-pieces, we aim to ask the right questions about in-car interactions and the Human Machine Interface (HMI). Follow our website at www.ustwo.com and www.ustwo.com/auto for our publications.
 
 ## License
 
-     The MIT License (MIT)  
-      
-     Copyright (c) 2015 ustwo studio inc (www.ustwo.com)  
-      
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to deal
-     in the Software without restriction, including without limitation the rights
-     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:  
-     
-     The above copyright notice and this permission notice shall be included in all
-     copies or substantial portions of the Software.  
-      
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-     SOFTWARE.  
+The project is licensed under the MIT License - see the LICENSE file for details. This license allows for wide-ranging freedom in use, modification, and distribution of the software, ensuring that innovations can be shared and built upon by the community.
